@@ -1,12 +1,12 @@
 package ru.job4j.loop;
 
 public class Fitness {
-    public static int calc(int ivan, int nik) {
+    public static int calc(int first, int second) {
         int month = 0;
-        while (ivan <= nik) {
+        while (first <= second) {
             month++;
-            ivan *= 3;
-            nik *= 2;
+            first *= 3;
+            second *= 2;
         }
         return month;
     }
