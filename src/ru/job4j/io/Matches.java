@@ -8,24 +8,22 @@ public class Matches {
         int count = 11;
         int win = 2;
         System.out.println("Игра начинается!");
-        while (count > 0) {
+        while (true) {
             if (win == 2) {
                 win = 1;
             } else {
                 win = 2;
             }
             System.out.println("Сколько " + win + " игрок хочет забрать спичек?");
-            boolean run = true;
-            int a = 0;
-            while (run) {
+            int a = Integer.valueOf(scanner.nextLine());
+            while (a > 0 && a < 4) {
+                System.out.println("Вы хотите взять больше спичек чем можно. Попробуйте снова");
                 a = Integer.valueOf(scanner.nextLine());
-                if (a <= count && a > 0 && a < 4) {
-                    run = false;
-                } else {
-                    System.out.println("Вы хотите взять больше спичек чем есть. Попробуйте снова");
-                }
             }
             count -= a;
+            if (count <= 0) {
+                break;
+            }
             System.out.println("Остаток спичек: " + count);
         }
         System.out.println("Спичек не осталось! Выиграл " + win + " игрок");
