@@ -16,7 +16,7 @@ public class Matches {
             }
             System.out.println("Сколько " + win + " игрок хочет забрать спичек?");
             int a = Integer.valueOf(scanner.nextLine());
-            while (a > 0 && a < 4) {
+            while (a < 1 || a > 3) {
                 System.out.println("Вы хотите взять больше спичек чем можно. Попробуйте снова");
                 a = Integer.valueOf(scanner.nextLine());
             }
